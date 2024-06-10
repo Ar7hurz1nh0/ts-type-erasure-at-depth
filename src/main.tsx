@@ -15,6 +15,15 @@ declare module "@tanstack/react-router" {
 	}
 }
 
+type A = Parameters<(typeof router)["navigate"]>[0]["to"];
+//   ^?
+type B = Parameters<typeof router.navigate>[0]["to"];
+//   ^?
+router.navigate({
+	to: undefined,
+	// ^?
+});
+
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
 const rootElement = document.getElementById("app")!;
 
