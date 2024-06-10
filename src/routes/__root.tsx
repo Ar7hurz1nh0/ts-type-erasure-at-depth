@@ -3,6 +3,10 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { artificialDelay } from "../utils/delay";
 
 export const Route = createRootRoute({
+	// Summed up error should look like this:
+	// `Types of parameters 'val' and 'opts' are incompatible.`
+	// `Types of property 'search' are incompatible.`
+	// `Type 'RootSearchSchema' is not assignable to type 'never'.`
 	beforeLoad: artificialDelay(),
 	component: RootComponent,
 });
